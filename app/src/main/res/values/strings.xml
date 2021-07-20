@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ 	  Party Alcohol Calc - Estimates the amount of alcohol needed for a party 
+ 						and a cost comparison that includes volume and proof.
+         Copyright (C) 2012 George Yauneridge
+  
+         This program is free software: you can redistribute it and/or modify
+         it under the terms of the GNU General Public License as published by
+         the Free Software Foundation, either version 3 of the License, or (at
+         your option) any later version.
+ 
+         This program is distributed in the hope that it will be useful, but
+         WITHOUT ANY WARRANTY; without even the implied warranty of
+         MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+         General Public License for more details.
+ 
+         You should have received a copy of the GNU General Public License
+         along with this program. If not, see <http://www.gnu.org/licenses/>.
+ -->
+<resources>
+    <!-- ************         EULA           ************ -->
+    
+    <string name="eula_title">License</string>
+    <string name="eula_accept">Accept</string>
+    <string name="eula_refuse">Decline</string>
+
+    <!-- ************   Labels and Results   ************ -->
+    
+    <string name="app_name">Party Alcohol Calculator</string>
+    <string name="help_title">Help</string>
+    <string name="about_title">About</string>
+    
+    <string name="low_bac">.00</string>
+    <string name="high_bac">.35</string>
+    <string name="bac">BAC</string>
+    
+    <string name="cost_button_title">Perform Cost/Volume Analysis</string>
+    <string name="party_button_title">Estimate Alcohol For Your Party</string>
+    
+    <string name="volume">Volume:</string>
+    <string name="proof">Proof:</string>
+    <string name="price">Price:</string>
+    <string name="calculate">Calculate</string>
+    
+    <string name="cost_label">Cost per unit: </string>
+    <string name="need_label">You need: </string>
+    <string name="unit">L</string>
+    
+    <string name="num_people">Number of People:</string>
+    <string name="avg_weight">Avg. Weight:</string>
+    <string name="num_hour">Hours of Partying:</string>
+    
+    <!-- ************   Messages   ************ -->
+    
+    <!-- Party -->
+    <string name="party_help_info">Enter the approximate values for each field.\n 
+        -Number of people expected to be drinking at the party\n
+        -Estimated average weight of each person\n
+        -Duration of the party in hours\n
+        -Proof of the drink (1-200)\n
+        -Drag the slider to the desired BAC</string>
+    <string name="party_about_info">This program will calculate the approximate alcohol needed for a party. You may want to take other factors into consideration, such as pregaming.</string>
+    <string name="party_error_info">Error - Please verify that all fields are correctly filled.</string>
+    
+    <!-- Cost -->
+    <string name="cost_help_info">Enter the volume, proof(1-200), and the price (e.g. 21.99). It does not matter what currency or unit of volume is used.</string>
+    <string name="cost_about_info">This program will calculate the cost per unit of pure alcohol. It does not matter what currency or unit of volume is used.</string>
+    <string name="cost_error_info">Error - Please verify that all fields are correctly filled.</string>
+    
+    <!-- Both -->
+    <string name="help">Help</string> <!-- TODO translate -->
+    <string name="help_des">Button to display the help message</string> <!-- TODO translate -->
+    <string name="about">About</string> <!-- TODO translate -->
+    <string name="about_des">Button to display the help message</string> <!-- TODO translate -->
+    <string name="both_help_info">Enter the approximate values for each field.\n 
+        -Number of people expected to be drinking at the party\n
+        -Estimated average weight of each person\n
+        -Duration of the party in hours\n
+        -Proof of the drink (1-200)\n
+        -Drag the slider to the desired BAC\n\n        
+        Enter the volume, proof(1-200), and the price (e.g. 21.99). It does not matter what currency or unit of volume is used.</string>
+    <string name="both_about_info">This program will calculate the approximate alcohol needed for a party. You may want to take other factors into consideration, such as pregaming. 
+        This program will also calculate the cost per unit of pure alcohol. It does not matter what currency or unit of volume is used.</string>
+    <string name="both_error_info">Error - Please verify that all fields for one or both sides of the screen are correctly filled.</string>
+    
+    <!-- ************   HintText   ************ -->
+    
+    <string name="weight_hint">pounds</string>
+    <string name="volume_cost_hint">oz or ml</string>
+        
+    <!-- ************   Content Description   ************ -->
+    
+    <string name="volume_input_des">Text field for volume input</string>
+    <string name="proof_input_des">Text field for proof input</string>
+    <string name="price_input_des">Text field for price input</string>
+    <string name="calculate_button_des">Button to calculate the result</string>
+    <string name="cost_button_des">Button to display the cost/volume analysis form</string>
+    <string name="party_button_des">Button to display the party estimate form</string>
+    
+    <string name="weight_input_des">Text field for weight input</string>
+    <string name="people_input_des">Text field for number of people input</string>   
+    <string name="hour_input_des">Text field for hour input</string>
+    
+</resources>

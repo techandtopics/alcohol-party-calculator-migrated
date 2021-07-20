@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ 	  Party Alcohol Calc - Estimates the amount of alcohol needed for a party 
+ 						and a cost comparison that includes volume and proof.
+         Copyright (C) 2012 George Yauneridge
+  
+         This program is free software: you can redistribute it and/or modify
+         it under the terms of the GNU General Public License as published by
+         the Free Software Foundation, either version 3 of the License, or (at
+         your option) any later version.
+ 
+         This program is distributed in the hope that it will be useful, but
+         WITHOUT ANY WARRANTY; without even the implied warranty of
+         MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+         General Public License for more details.
+ 
+         You should have received a copy of the GNU General Public License
+         along with this program. If not, see <http://www.gnu.org/licenses/>.
+ -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent">
+	
+    <!-- default party layout -->
+	<TextView android:id="@+id/peoplePrompt"
+		android:textColor="#aaaaaa"
+		android:textSize="17sp"
+		android:textStyle="bold"
+		android:layout_width="170dip"
+		android:layout_height="wrap_content" 
+		android:layout_marginTop="20dip"
+		android:layout_marginLeft="20dip"
+		android:text="@string/num_people"/>
+	<EditText android:id="@+id/peopleEntry" 
+		android:contentDescription="@string/people_input_des"
+		android:inputType="number"
+		android:maxLength="4"
+		android:layout_width="100dp"
+		android:layout_height="wrap_content" 
+		android:layout_marginLeft="10dip"
+		android:background="@android:drawable/editbox_background"
+		android:layout_toRightOf="@id/peoplePrompt" 
+		android:layout_alignTop="@id/peoplePrompt"/>
+    
+	<TextView android:id="@+id/weightPrompt" 
+		android:textColor="#aaaaaa"
+		android:textSize="17sp"
+		android:textStyle="bold"
+		android:layout_width="170dip"
+		android:layout_height="wrap_content" 
+		android:layout_marginTop="20dip"
+		android:layout_marginLeft="20dip"
+		android:text="@string/avg_weight"
+		android:layout_below="@id/peoplePrompt"/>
+	<EditText android:id="@+id/weightEntry" 
+		android:contentDescription="@string/weight_input_des"
+		android:inputType="number"
+		android:maxLength="3"		
+		android:hint="@string/weight_hint"
+		android:layout_width="100dp"
+		android:layout_height="wrap_content" 
+		android:layout_marginLeft="10dip"
+		android:background="@android:drawable/editbox_background"
+		android:layout_toRightOf="@id/weightPrompt" 
+		android:layout_alignTop="@id/weightPrompt"/>
+	
+	<TextView android:id="@+id/hourPrompt" 
+		android:textColor="#aaaaaa"
+		android:textSize="17sp"
+		android:textStyle="bold"
+		android:layout_width="170dip"
+		android:layout_height="wrap_content" 
+		android:layout_marginTop="20dip"
+		android:layout_marginLeft="20dip"
+		android:layout_below="@id/weightPrompt"
+		android:text="@string/num_hour"/>
+	<EditText android:id="@+id/hourEntry" 
+		android:contentDescription="@string/hour_input_des"
+		android:inputType="numberDecimal"
+		android:maxLength="3"
+		android:layout_width="100dp"
+		android:layout_height="wrap_content" 
+		android:layout_marginLeft="10dip"
+		android:background="@android:drawable/editbox_background"
+		android:layout_toRightOf="@id/hourPrompt"		
+		android:layout_alignTop="@id/hourPrompt"/>
+	
+	<TextView android:id="@+id/proofPrompt" 
+		android:textColor="#aaaaaa"
+		android:textSize="17sp"
+		android:textStyle="bold"
+		android:layout_width="170dip"
+		android:layout_height="wrap_content" 
+		android:layout_marginTop="20dip"
+		android:layout_marginLeft="20dip"
+		android:layout_below="@id/hourPrompt"
+		android:text="@string/proof"/>
+	<EditText android:id="@+id/proofEntry" 
+		android:contentDescription="@string/proof_input_des"
+		android:inputType="number"
+		android:maxLength="3"
+		android:layout_width="100dp"
+		android:layout_height="wrap_content" 
+		android:layout_marginLeft="10dip"
+		android:background="@android:drawable/editbox_background"
+		android:layout_toRightOf="@id/proofPrompt"		
+		android:layout_alignTop="@id/proofPrompt"/>
+		
+	<TextView android:id="@+id/soberLabel" 
+		android:textColor="#aaaaaa"
+		android:textSize="17sp"
+		android:textStyle="bold"
+		android:layout_width="30dip"
+		android:layout_height="wrap_content" 
+		android:layout_marginTop="20dip"
+		android:layout_marginLeft="80dip"
+		android:layout_below="@id/proofPrompt"
+		android:text="@string/low_bac"/>
+	<TextView android:id="@+id/drunkLabel" 
+		android:textColor="#aaaaaa"
+		android:textSize="17sp"
+		android:textStyle="bold"
+		android:layout_width="30dip"
+		android:layout_height="wrap_content" 
+		android:layout_marginLeft="160dip"
+		android:layout_toRightOf="@id/soberLabel"
+		android:layout_alignTop="@id/soberLabel"
+		android:text="@string/high_bac"/>
+	
+	<TextView android:id="@+id/bacLabel" 
+		android:textColor="#aaaaaa"
+		android:textSize="17sp"
+		android:textStyle="bold"
+		android:layout_width="45dip"
+		android:layout_height="wrap_content" 
+		android:layout_marginTop="10dip"
+		android:layout_marginLeft="25dip"
+		android:layout_below="@id/soberLabel"
+		android:text="@string/bac"/>
+	<SeekBar android:id="@+id/bac"
+	    android:layout_toRightOf="@id/bacLabel"
+	    android:layout_alignTop="@id/bacLabel"
+	    android:layout_width="200dip"
+	    android:layout_height="25dip"
+	    android:layout_marginLeft="15dip"/>
+
+	<Button android:id="@+id/help"
+		android:layout_width="60dip"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dip"
+		android:layout_alignTop="@id/peopleEntry"
+		android:layout_toRightOf="@id/peopleEntry"
+		android:background="#00aaaaaa"
+		android:textColor="#aaaaaa"
+		android:text="@string/help"
+		android:contentDescription="@string/help_des"
+		android:onClick="showHelp" />
+	<Button android:id="@+id/about"
+		android:layout_width="60dip"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="25dip"
+		android:layout_toRightOf="@id/help"
+		android:layout_alignTop="@+id/help"
+		android:background="#00aaaaaa"
+		android:textColor="#aaaaaa"
+		android:text="@string/about"
+		android:contentDescription="@string/about_des"
+		android:onClick="showAbout" />
+	
+	<Button android:id="@+id/calculate" 
+		android:contentDescription="@string/calculate_button_des"
+		android:layout_width="150dip"
+		android:layout_height="50dip"
+		android:textStyle="bold"
+		android:text="@string/calculate"
+		android:layout_below="@id/help"
+		android:layout_alignLeft="@id/help"
+		android:layout_marginTop="40dip"
+		android:onClick="calcParty"/>
+	
+	<TextView android:id="@+id/needLabel" 
+		android:textColor="#aaaaaa"
+		android:textSize="17sp"
+		android:textStyle="bold"
+		android:layout_width="90dip"
+		android:layout_height="wrap_content" 
+		android:layout_marginTop="40dip"
+		android:layout_alignLeft="@id/calculate"
+		android:text="@string/need_label"
+		android:layout_below="@id/calculate"/>
+	<TextView android:id="@+id/displayNeed" 
+		android:textColor="#aaaaaa"
+		android:textSize="17sp"
+		android:textStyle="bold"
+		android:layout_width="60dip"
+		android:layout_height="wrap_content" 
+		android:layout_marginLeft="10dip"
+		android:layout_toRightOf="@id/needLabel" 
+		android:layout_alignTop="@id/needLabel"
+		android:text="-"/>
+	<TextView android:id="@+id/displayUnit" 
+		android:textColor="#aaaaaa"
+		android:textSize="17sp"
+		android:textStyle="bold"
+		android:layout_width="35dip"
+		android:layout_height="wrap_content" 
+		android:layout_marginLeft="5dip"
+		android:layout_toRightOf="@id/displayNeed" 
+		android:layout_alignTop="@id/displayNeed"
+		android:text="@string/unit"/>
+</RelativeLayout>

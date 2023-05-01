@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "com.blogspot.techandtopics.alcoholparty"
         minSdkVersion 8
-        targetSdkVersion 30
+        targetSdkVersion 33
     }
 
     buildTypes {
